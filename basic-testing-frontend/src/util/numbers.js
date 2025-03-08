@@ -6,6 +6,11 @@ export function transformToNumber(value) {
 }
 
 export function cleanNumbers(numberValues) {
+
+  if (numberValues.length === 0) {
+    throw new Error('invalid input - array must not be empty!');
+  }
+
   const numbers = [];
   for (const numberInput of numberValues) {
     validateStringNotEmpty(numberInput);
